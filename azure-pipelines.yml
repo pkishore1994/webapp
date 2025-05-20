@@ -5,7 +5,7 @@ trigger:
 - main
 
 pool:
-  vmImage: vmagentpool
+  vmImage: ubuntu-image
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
@@ -14,6 +14,9 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'custom'
 - task: NodeTool@0
   inputs:
     versionSpec: '20.x'
