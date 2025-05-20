@@ -5,7 +5,10 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: vmagentpool
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
 
 steps:
 - task: DotNetCoreCLI@2
