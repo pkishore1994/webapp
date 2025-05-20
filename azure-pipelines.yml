@@ -1,4 +1,14 @@
 ## Node.js pipeline for building a project with npm
+- task: Maven@4
+  inputs:
+    mavenPomFile: 'pom.xml'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+    sonarQubeRunAnalysis: false
 # Learn more: https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
